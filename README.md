@@ -14,32 +14,31 @@
 
 ![Contributors](https://img.shields.io/github/contributors/hernikplays/kaiwa?color=dark-green) ![Issues](https://img.shields.io/github/issues/hernikplays/kaiwa) ![License](https://img.shields.io/github/license/hernikplays/kaiwa) 
 
-## Table Of Contents
+## Obsah
 
-* [About the Project](#about-the-project)
-* [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
-* [Contributing](#contributing)
-* [License](#license)
-* [Authors](#authors)
-* [Acknowledgements](#acknowledgements)
+* [O Projektu](#o-projektu)
+* [Začínáme](#začínáme)
+  * [Než začneme](#než-začneme)
+  * [Instalace](#instalace)
+* [Přispíváme](#přispíváme)
+* [Licence](#licence)
+* [Poděkování](#poděkování)
 
-## About The Project
+## O Projektu
 
 Pro všechny studenty, jazykové servery a fanoušky jazyků přináším robota, který umožňuje prohlížet slovníky, hrát jazykové hry a další fičurky:tm:
 
-## Getting Started
+## Začínáme
 
 Zde najdete návod jak si hostovat **vlastní** verzi tohoto bota na vašem účtu. Pokud pouze chcete bota používat, pozvěte skrze [tento](https://discord.com/api/oauth2/authorize?client_id=1008045551041908749&permissions=388160&scope=bot%20applications.commands) odkaz.
 
-### Prerequisites
+### Než začneme
 
 Než začnete, ujistěte se, že máte vytvořený bot účet ve [vývojářském portálu](https://discord.com/developers). Poté si zkopírujte jeho token.
 
 Nainstalujte si [NodeJS](https://nodejs.org) a NPM. (LTS by mělo stačit)
 
-### Installation
+### Instalace
 
 1. Stáhněte si repozitář
 Buď skrz tlačítko nahoře nebo v konzoli `git clone https://github.com/hernikplays/kaiwa`
@@ -63,7 +62,7 @@ Více viz [CONTRIBUTING](https://github.com/hernikplays/kaiwa/blob/main/CONTRIBU
 
 Vydáno pod licencí GNU General Public License Version 3. Pro více informací viz soubor [LICENSE](https://github.com/hernikplays/kaiwa/blob/main/LICENSE.md).
 
-## Díky
+## Poděkování
 
 * [typescript](https://typescriptlang.org/)
 * [unofficial-jisho-api](https://www.npmjs.com/package/unofficial-jisho-api) Copyright (c) 2017 mistval, použito pod licencí [MIT](https://github.com/mistval/unofficial-jisho-api/blob/master/LICENSE)
