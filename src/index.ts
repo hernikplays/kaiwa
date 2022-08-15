@@ -6,7 +6,10 @@ import interactionCreate from "./listeners/interactionCreate";
 console.log("Bot is starting...");
 
 const myIntents = new IntentsBitField();
-myIntents.add(IntentsBitField.Flags.MessageContent, IntentsBitField.Flags.GuildMessages);
+myIntents.add(
+  IntentsBitField.Flags.MessageContent,
+  IntentsBitField.Flags.GuildMessages
+);
 
 const client = new Client({
   intents: myIntents,

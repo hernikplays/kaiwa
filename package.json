@@ -6,7 +6,7 @@
   "scripts": {
     "start": "ts-node ./src/index.ts",
     "lint": "prettier --write . && eslint .",
-    "prepare":"husky install"
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
