@@ -1,10 +1,9 @@
 ---
 name: Chybové Hlášení
 about: Nahlásit chybu uvnitř programu
-title: ''
+title: ""
 labels: bug
 assignees: hernikplays
-
 ---
 
 **GITHUB ISSUES NESLOUŽÍ K NAHLAŠOVÁNÍ PROBLÉMŮ OFICIÁLNÍ INSTANCE BOTA JAKO JSOU NAPŘ. RYCHLOST, NEDOSTUPNOST APOD.**

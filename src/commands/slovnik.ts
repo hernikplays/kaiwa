@@ -16,6 +16,7 @@ import { WordResult } from "sdapi/lib/dictionary";
 export const Slovnik: Command = {
   name: "slovnik",
   description: "Umožňuje prohledávat slovníky určitých jazyků",
+  dmPermission: true,
   options: [
     {
       name: "jazyk",
@@ -171,7 +172,10 @@ export const Slovnik: Command = {
               },
               { name: "Význam", value: r[0].meaning },
 
-              { name: "Příklad", value: `*${r[j].examples[0].original}*\n${r[j].examples[0].translated}` },
+              {
+                name: "Příklad",
+                value: `*${r[j].examples[0].original}*\n${r[j].examples[0].translated}`,
+              },
             ],
             footer: {
               text: `Strana 1/${r.length} | Vyhledáno na SpanishDict pomocí sdapi`,
@@ -209,7 +213,7 @@ async function newPageJP(
   q: string
 ): Promise<void> {
   if (i.customId === "next") {
-    if (j+1 >= r.data.length) j = 0;
+    if (j + 1 >= r.data.length) j = 0;
     else j += 1;
   } else {
     if (j === 0) j = r.data.length - 1;
@@ -282,7 +286,7 @@ async function newPageES(
   q: string
 ): Promise<void> {
   if (i.customId === "next") {
-    if (j+1 >= r.length) j = 0;
+    if (j + 1 >= r.length) j = 0;
     else j += 1;
   } else {
     if (j === 0) j = r.length - 1;
@@ -343,7 +347,10 @@ async function newPageES(
             }${druh}`,
           },
           { name: "Význam", value: r[j].meaning },
-          { name: "Příklad", value: `*${r[j].examples[0].original}*\n${r[j].examples[0].translated}` },
+          {
+            name: "Příklad",
+            value: `*${r[j].examples[0].original}*\n${r[j].examples[0].translated}`,
+          },
         ],
         footer: {
           text: `Strana ${j + 1}/${

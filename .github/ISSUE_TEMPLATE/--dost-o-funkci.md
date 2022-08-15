@@ -1,10 +1,9 @@
 ---
 name: Žádost o funkci
 about: Navrhněte funkci pro robota
-title: ''
+title: ""
 labels: enhancement
 assignees: hernikplays
-
 ---
 
 **Popište, co chcete přidat**
