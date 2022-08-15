@@ -106,7 +106,7 @@ async function poslatKviz(
           title: "Finální výsledky",
           description: vysledky,
           footer: {
-            text: "Zobrazují se pouze hráči s počtem bodů vyším než nula.",
+            text: "Zobrazují se pouze hráči s počtem bodů vyšším než nula.",
           },
         },
       ],
@@ -134,9 +134,7 @@ async function poslatKviz(
   const filter = (m: Message) => m.channelId === channel.id && !m.author.bot;
   const collector = channel.createMessageCollector({ filter, time: 15000 });
   collector?.on("collect", (m) => {
-    console.log(m.channelId);
-    console.log(m.content);
-    if (meanings.includes(m.content)) {
+    if (meanings.includes(m.content.toLowerCase())) {
       if (points[m.author.id] === undefined) points[m.author.id] = 1;
       else points[m.author.id] += 1;
       guessed.push(m.author.id);
