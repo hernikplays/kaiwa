@@ -60,7 +60,7 @@ Více viz [CONTRIBUTING](https://github.com/hernikplays/kaiwa/blob/main/CONTRIBU
 
 ## Licence
 
-Vydáno pod licencí GNU General Public License Version 3. Pro více informací viz soubor [LICENSE](https://github.com/hernikplays/kaiwa/blob/main/LICENSE.md).
+Vydáno pod licencí GNU General Public License Version 3. Pro více informací viz soubor [LICENSE](https://github.com/hernikplays/kaiwa/blob/main/LICENSE).
 
 ## Poděkování
 
