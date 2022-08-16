@@ -31,7 +31,27 @@ export const Kviz: Command = {
           choices: [
             {
               name: "1. třída",
-              value: "1c",
+              value: "grade-1",
+            },
+            {
+              name: "2. třída",
+              value: "grade-2",
+            },
+            {
+              name: "3. třída",
+              value: "grade-3",
+            },
+            {
+              name: "4. třída",
+              value: "grade-4",
+            },
+            {
+              name: "5. třída",
+              value: "grade-5",
+            },
+            {
+              name: "6. třída",
+              value: "grade-6",
             },
           ],
         },
@@ -42,10 +62,9 @@ export const Kviz: Command = {
   run: async (client: Client, interaction: CommandInteraction) => {
     const level =
       interaction.options.get("uroven")?.value?.toString() ?? "chyba";
-    if (level === "1c") {
-      // first grade
+      
       const kanji = await (
-        await axios.get("https://kanjiapi.dev/v1/kanji/grade-1")
+        await axios.get("https://kanjiapi.dev/v1/kanji/"+level)
       ).data;
 
       const row = new ActionRowBuilder<ButtonBuilder>().addComponents(
@@ -55,11 +74,33 @@ export const Kviz: Command = {
           .setStyle(ButtonStyle.Primary)
       );
 
+        let trida = "1";
+        switch (level) {
+          case "grade-2":
+            trida = "2";
+            break;
+            case "grade-3":
+            trida = "3";
+            break;
+            case "grade-4":
+            trida = "4";
+            break;
+            case "grade-5":
+            trida = "5";
+            break;
+            case "grade-6":
+            trida = "6";
+            break;
+        
+          default:
+            break;
+        }
+
       const mes = await interaction.editReply({
         components: [row],
         embeds: [
           {
-            title: `Kvíz kandži pro 1. třídu`,
+            title: `Kvíz kandži pro ${trida}. třídu`,
             description:
               "Klikni na 'Start' pro start.\nKdokoliv se může přidat a hádat v tomto kanálu.",
           },
@@ -81,7 +122,7 @@ export const Kviz: Command = {
         );
         i.update("e");
       });
-    }
+    
   },
 };
 let j = 1;
