@@ -13,6 +13,7 @@
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "axios": "^0.27.2",
+    "cheerio": "1.0.0-rc.12",
     "discord.js": "^14.2.0",
     "dotenv": "^16.0.1",
     "sdapi": "^0.2.3",
