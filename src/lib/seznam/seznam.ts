@@ -30,8 +30,8 @@ export interface Vysledky {
 }
 
 export interface Vyznam {
-  cesky: string
-  detaily: string[]
+  cesky: string;
+  detaily: string[];
 }
 
 export class Seznam {
@@ -62,30 +62,34 @@ export class Seznam {
     let m;
     const vyznamy: string[] = [];
 
-    while ((m = vyznamRegex.exec(r.data)) !== null) { // Projde všechny zachycené významy
+    while ((m = vyznamRegex.exec(r.data)) !== null) {
+      // Projde všechny zachycené významy
       if (m.index === vyznamRegex.lastIndex) {
         vyznamRegex.lastIndex++;
       }
 
       m.forEach((match) => {
         const vyznam = /(?<=<a .+?>).+?(?=<\/a>)/gm.exec(match);
-        const detailRegex = /<span class="Box-content-line">(?!<a).+?<\/span>.+?<\/span>/gm
-        const doplneni = /(?<=<span class='d'>).+?(?=<\/span>)/gm.exec(match)
-        let plny = ""
+        const detailRegex =
+          /<span class="Box-content-line">(?!<a).+?<\/span>.+?<\/span>/gm;
+        const doplneni = /(?<=<span class='d'>).+?(?=<\/span>)/gm.exec(match);
+        let plny = "";
         if (vyznam === null || vyznam.length === 0) return;
-        plny = vyznam[0]
+        plny = vyznam[0];
 
-        if(doplneni !== null && doplneni.length > 0) plny += ` (${doplneni[0]})` // přidat doplnění významu pokud existuje
+        if (doplneni !== null && doplneni.length > 0)
+          plny += ` (${doplneni[0]})`; // přidat doplnění významu pokud existuje
 
         let n;
-        while ((n = detailRegex.exec(match)) !== null) { // pro každý význam zpracujeme detaily
+        while ((n = detailRegex.exec(match)) !== null) {
+          // pro každý význam zpracujeme detaily
           if (n.index === detailRegex.lastIndex) {
             detailRegex.lastIndex++;
           }
-    
+
           n.forEach((d) => {
-            d = d.replaceAll('<span lang="cs" class="note">',"<span> - ")
-            plny += `\n*- ${cheerio.load(d).text()}*`
+            d = d.replaceAll('<span lang="cs" class="note">', "<span> - ");
+            plny += `\n*- ${cheerio.load(d).text()}*`;
           });
         }
 

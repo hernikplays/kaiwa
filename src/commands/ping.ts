@@ -1,4 +1,8 @@
-import { CommandInteraction, Client, ApplicationCommandType } from "discord.js";
+import {
+  Client,
+  ApplicationCommandType,
+  ChatInputCommandInteraction,
+} from "discord.js";
 import { Command } from "../interface/command";
 
 /*
@@ -24,7 +28,7 @@ export const Ping: Command = {
   name: "ping",
   description: "Pong!",
   type: ApplicationCommandType.ChatInput,
-  run: async (client: Client, interaction: CommandInteraction) => {
+  run: async (client: Client, interaction: ChatInputCommandInteraction) => {
     const content = "Pong!";
 
     await interaction.followUp({

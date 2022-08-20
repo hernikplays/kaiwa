@@ -18,13 +18,15 @@
     "dotenv": "^16.0.1",
     "sdapi": "^0.2.3",
     "tslib": "^2.4.0",
-    "unofficial-jisho-api": "^2.3.0"
+    "unofficial-jisho-api": "^2.3.0",
+    "wanakana": "^5.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@types/jsdom": "^20.0.0",
     "@types/node": "^18.7.3",
+    "@types/wanakana": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "eslint": "^8.21.0",
