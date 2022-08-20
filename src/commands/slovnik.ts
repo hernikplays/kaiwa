@@ -229,10 +229,10 @@ export const Slovnik: Command = {
     } else if (interaction.options.get("jazyk")?.value === "seznam") {
       const s = new Seznam(Jazyk.Anglictina);
       const v = await s.vyhledat(q);
-      if (v == null) {
+      if (v == undefined || v.vyznamy.length === 0) {
         await interaction.editReply({
           embeds: [
-            { title: "Chyba!", description: "Nic nenalezeno", color: 0xe02440 },
+            { title: "Chyba!", description: "Nic nenalezeno pro výraz '"+q+"'", color: 0xe02440 },
           ],
         });
       } else {
