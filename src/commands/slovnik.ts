@@ -1,5 +1,4 @@
 import {
-  CommandInteraction,
   Client,
   ApplicationCommandType,
   ApplicationCommandOptionType,
@@ -8,6 +7,7 @@ import {
   ButtonStyle,
   ButtonInteraction,
   SelectMenuInteraction,
+  ChatInputCommandInteraction,
 } from "discord.js";
 import { Command } from "../interface/command";
 import JishoAPI, { JishoAPIResult } from "unofficial-jisho-api";
@@ -67,7 +67,7 @@ export const Slovnik: Command = {
     },
   ],
   type: ApplicationCommandType.ChatInput,
-  run: async (client: Client, interaction: CommandInteraction) => {
+  run: async (client: Client, interaction: ChatInputCommandInteraction) => {
     const q = interaction.options.get("slovo")?.value?.toString();
 
     if (q == undefined) {
@@ -232,7 +232,11 @@ export const Slovnik: Command = {
       if (v == undefined || v.vyznamy.length === 0) {
         await interaction.editReply({
           embeds: [
-            { title: "Chyba!", description: "Nic nenalezeno pro výraz '"+q+"'", color: 0xe02440 },
+            {
+              title: "Chyba!",
+              description: "Nic nenalezeno pro výraz '" + q + "'",
+              color: 0xe02440,
+            },
           ],
         });
       } else {
@@ -244,7 +248,7 @@ export const Slovnik: Command = {
                 { name: "Výslovnost", value: v?.vyslovnost ?? "N/A" },
                 { name: "Významy", value: v?.vyznamy.join("\n") ?? "N/A" },
               ],
-              footer: {text: "Informace ze slovnik.seznam.cz"}
+              footer: { text: "Informace ze slovnik.seznam.cz" },
             },
           ],
         });
