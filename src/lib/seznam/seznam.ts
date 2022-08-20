@@ -70,9 +70,13 @@ export class Seznam {
       m.forEach((match) => {
         const vyznam = /(?<=<a .+?>).+?(?=<\/a>)/gm.exec(match);
         const detailRegex = /<span class="Box-content-line">(?!<a).+?<\/span>.+?<\/span>/gm
+        const doplneni = /(?<=<span class='d'>).+?(?=<\/span>)/gm.exec(match)
         let plny = ""
         if (vyznam === null || vyznam.length === 0) return;
         plny = vyznam[0]
+
+        if(doplneni !== null && doplneni.length > 0) plny += ` (${doplneni[0]})` // přidat doplnění významu pokud existuje
+
         let n;
         while ((n = detailRegex.exec(match)) !== null) { // pro každý význam zpracujeme detaily
           if (n.index === detailRegex.lastIndex) {
