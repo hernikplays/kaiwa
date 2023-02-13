@@ -24,7 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@types/jsdom": "^20.0.0",
+    "@types/jsdom": "^21.1.0",
     "@types/node": "^18.7.3",
     "@types/wanakana": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
